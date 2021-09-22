@@ -1,19 +1,21 @@
 const prompt = require("prompt-sync")();
 
-const bill = prompt("How much was the bill: ");
-const person1 = prompt("How much did person 1 pay: ");
-const person2 = prompt("How much did person 2 pay: ");
+const bill = Number(prompt("How much was the bill: "));
+const person1 = Number(prompt("How much did person 1 pay: "));
+const person2 = Number(prompt("How much did person 2 pay: "));
+
+const amountOwed = bill - person1 - person2;
 
 const splitBill = bill / 2;
-const owes2 = splitBill - person2;
-const owes1 = splitBill - person1;
+const x = person1 - splitBill;
+const y = person2 - splitBill;
 
-if (person1 === person2) {
+if (person1 === person2 && amountOwed === 0) {
 	console.log("Nobody owes");
-} else if (person1 < splitBill) {
-	console.log("Person 2 owes $" + owes1);
-} else if (person2 < splitBill) {
-	console.log("Person 2 owes $" + owes2);
+} else if (person1 < splitBill && amountOwed === 0) {
+	console.log("Person 1 owes Person 2 $" + y);
+} else if (person2 < splitBill && amountOwed === 0) {
+	console.log("Person 2 owes Person 1 $" + x);
 } else {
 	console.log("Error");
 }
