@@ -24,6 +24,15 @@ if (person1 === person2 && person1 === person3 && amountOwed === 0) {
 } else if (person1 === 0 && person3 === 0 && amountOwed === 0) {
 	console.log("Person 1 owes Person 2 $50");
 	console.log("Person 3 owes Person 2 $50");
+} else if (person1 < splitBill && person2 < splitBill && amountOwed === 0) {
+	console.log("Person 1 owes Person 3 $" + Math.abs(x));
+	console.log("Person 2 owes Person 3 $" + Math.abs(y));
+} else if (person2 < splitBill && person3 < splitBill && amountOwed === 0) {
+	console.log("Person 2 owes Person 1 $" + Math.abs(y));
+	console.log("Person 3 owes Person 1 $" + Math.abs(z));
+} else if (person1 < splitBill && person3 < splitBill && amountOwed === 0) {
+	console.log("Person 1 owes Person 2 $" + Math.abs(x));
+	console.log("Person 3 owes Person 2 $" + Math.abs(z));
 } else if (
 	person1 < splitBill &&
 	(person2 >= splitBill || person3 >= splitBill) &&
